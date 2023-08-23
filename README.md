@@ -5,7 +5,7 @@ Format selected lines of text into columns of equal width.
 I wrote this plugin in order to keep my
 [Kmonad](https://github.com/kmonad/kmonad) configuration in shape. Time will
 tell if there are any other use cases for it. At least I now have written my
-first plugin for Neovim :blush:.
+first plugin for Neovim :tada:.
 
 ## Installation and configuration
 
@@ -15,7 +15,7 @@ Add the following to the list of your plugins:
 
 ```lua
     {
-        'jakeru/columnize',
+        'jakeru/columnize.nvim',
         dependencies = {
             'nvim-lua/plenary.nvim',
         },
