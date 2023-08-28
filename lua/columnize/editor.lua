@@ -36,9 +36,8 @@ end
 
 -- Gets start and end line of current visual selection
 function M.get_selected_lines()
-    local start_line = vim.fn.line('v')
-    local end_line = vim.fn.line('.')
-    return start_line, end_line
+    local lines = { vim.fn.line('v'), vim.fn.line('.') }
+    return vim.fn.min(lines), vim.fn.max(lines)
 end
 
 return M
