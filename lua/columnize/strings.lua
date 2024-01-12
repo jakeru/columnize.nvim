@@ -10,6 +10,11 @@ function M.left_whitespace(str)
     return select(3, string.find(str, '^(%s*)'))
 end
 
+function M.rtrim(str)
+    local res, _ = string.gsub(str, '[ \t]+%f[\r\n%z]', '')
+    return res
+end
+
 function M.max_word_length(str)
     local max_len = 0
     for w in M.split(str) do
@@ -31,7 +36,7 @@ function M.columnize_line(line, indent, word_length)
     for w in M.split(line) do
         table.insert(res, indent .. pstrings.align_str(w, word_length, false))
     end
-    return table.concat(res, ' ')
+    return M.rtrim(table.concat(res, ' '))
 end
 
 function M.columnize_lines(lines, indent, word_length)
