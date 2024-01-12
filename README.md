@@ -35,3 +35,12 @@ vim.keymap.set("v", "<Leader>c", require('columnize').columnize,
 
 Select the lines you want to columnize and run the command `Columnize`. You can
 also invoke this tool by assigning it a key combination, as explained earlier.
+
+The command `Columnize` uses the maximum word length as column width per default.
+
+If you instead want to use a fixed column width, supply the wanted column width
+as an argument, like this: `Columnize 12`.
+
+Note that a column width of `12` means that a word with a maximum of 12
+positions will fit in it. . Columns are divided by spaces and these spaces are
+not included in the `fixed column width` parameter.

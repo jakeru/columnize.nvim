@@ -31,18 +31,18 @@ function M.max_word_length_in_lines(lines)
     return max_len
 end
 
-function M.columnize_line(line, indent, word_length)
+function M.columnize_line(line, indent, column_width)
     local res = {}
     for w in M.split(line) do
-        table.insert(res, indent .. pstrings.align_str(w, word_length, false))
+        table.insert(res, indent .. pstrings.align_str(w, column_width, false))
     end
     return M.rtrim(table.concat(res, ' '))
 end
 
-function M.columnize_lines(lines, indent, word_length)
+function M.columnize_lines(lines, indent, column_width)
     local res = {}
     for _, line in ipairs(lines) do
-        table.insert(res, M.columnize_line(line, indent, word_length))
+        table.insert(res, M.columnize_line(line, indent, column_width))
     end
     return res
 end
