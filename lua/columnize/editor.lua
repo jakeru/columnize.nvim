@@ -24,7 +24,7 @@ end
 --   • {buffer}           Buffer handle, or 0 for current buffer
 --   • {start}            First line index, first line is 1
 --   • {end}              Last line index, exclusive
---   • {lines}            Array of lines to change to
+--   • {lines}            Array of lines to change
 --
 --- @param buffer buffer
 --- @param start_line number
